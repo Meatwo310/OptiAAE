@@ -20,7 +20,7 @@ public class OptiAAECommands {
         dispatcher.register(Commands.literal("optiaae")
                 .then(Commands.literal("autoStockTicks")
                         .executes(OptiAAECommands::getAutoStockTicks)
-                        .then(Commands.argument("ticks", IntegerArgumentType.integer(0, 20))
+                        .then(Commands.argument("ticks", IntegerArgumentType.integer(0, Integer.MAX_VALUE))
                                 .requires(ctx -> ctx.hasPermission(2))
                                 .executes(OptiAAECommands::setAutoStockTicks)
                         )
